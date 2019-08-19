@@ -1,0 +1,76 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="template.xhtml">
+        <ui:define name="head">
+        
+	</ui:define>
+        <ui:define name="title">
+            <h:outputText value="TrustBank Webapp"></h:outputText>
+        </ui:define>
+
+        <ui:define name="header">
+            <!--<div class="page-header">-->
+            <div>
+                <h2>TrustBank Webapp</h2>
+                <p class="lead">This project shows a basic example of a web application working with JSF and CDI to simulate some functionality of bank system.</p>
+            </div>
+        </ui:define>
+
+        <ui:define name="body">
+            <div class="well">
+                <h:form id="form" styleClass="form">
+                    <legend>Accounts</legend>
+                    
+                    <p:dataTable id="singleDT" var="employee" value="#{employeeBean.employeeList}" 
+                    selectionMode="single" selection="#{employeeBean.selectedEmployee}" rowKey="#{employee.id}">
+			            <p:column headerText="Id">
+			                <h:outputText value="#{employee.id}"/>
+			            </p:column>
+			
+			            <p:column headerText="Name">
+			                <h:outputText value="#{employee.name}"/>
+			            </p:column>
+			
+			            <p:column headerText="Phone Number">
+			                <h:outputText value="#{employee.phoneNumber}"/>
+			            </p:column>
+			
+			            <p:column headerText="Address">
+			                <h:outputText value="#{employee.address}"/>
+			            </p:column>
+			            <f:facet name="footer">
+			            	<p:commandButton process="singleDT" update=":form:employeeDetail" icon="pi pi-search" value="View" oncomplete="PF('employeeDialog').show()" />
+			        	</f:facet>
+			        </p:dataTable>
+
+                    <br/>
+                    <!-- h:outputText value="#{employeeBean.msg}" styleClass="alert-success" escape="false"></h:outputText-->
+
+	                <p:dialog header="Employee Info" widgetVar="employeeDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+				        <p:outputPanel id="employeeDetail" style="text-align:center;">
+				            <p:panelGrid  columns="2" rendered="#{not empty employeeBean.msg}" columnClasses="label,value">
+				                 
+				                <h:outputText value="Selected:" />
+				                <h:outputText value="#{employeeBean.msg}" />
+				 
+				 
+				            </p:panelGrid>
+				        </p:outputPanel>
+				    </p:dialog>
+
+                </h:form>
+            </div>
+        </ui:define>
+
+        <ui:define name="footer">   
+            <footer>
+                <p>TrustBank Company</p>
+            </footer>
+        </ui:define>
+    </ui:composition>
+</html>
+
