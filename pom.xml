@@ -29,7 +29,7 @@
 		<dependency>
 		    <groupId>com.github.javafaker</groupId>
 		    <artifactId>javafaker</artifactId>
-		    <version>0.12</version>
+		    <version>1.0.1</version>
 		</dependency>		
 	</dependencies>
 
