@@ -7,7 +7,7 @@
 	<artifactId>oow19</artifactId>
 	<version>1.0.0</version>
 	<packaging>war</packaging>
-	<name>TrustbankWebapp</name>
+	<name>BestbankWebapp</name>
 
 	<parent>
 		<groupId>com.oracle.weblogic.archetype</groupId>
@@ -29,7 +29,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>trustbank${env.PARTICIPANT_ID}</finalName>
+		<finalName>bestbank${env.PARTICIPANT_ID}</finalName>
 		<plugins>
 			<plugin>
 			  <groupId>org.apache.maven.plugins</groupId>
