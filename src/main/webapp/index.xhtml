@@ -23,39 +23,39 @@
         <ui:define name="body">
             <div class="well">
                 <h:form id="form" styleClass="form">
-                    <legend>Accounts</legend>
+                    <legend>Account Owners</legend>
                     
-                    <p:dataTable id="singleDT" var="employee" value="#{employeeBean.employeeList}" 
-                    selectionMode="single" selection="#{employeeBean.selectedEmployee}" rowKey="#{employee.id}">
-			            <p:column headerText="Id">
-			                <h:outputText value="#{employee.id}"/>
+                    <p:dataTable id="singleDT" var="owner" value="#{accountOwnerBean.accountOwnerList}" 
+                    selectionMode="single" selection="#{accountOwnerBean.selectedAccountOwner}" rowKey="#{owner.id}">
+			            <p:column headerText="IBAN">
+			                <h:outputText value="#{owner.id}"/>
 			            </p:column>
 			
 			            <p:column headerText="Name">
-			                <h:outputText value="#{employee.name}"/>
+			                <h:outputText value="#{owner.name}"/>
 			            </p:column>
 			
-			            <p:column headerText="Phone Number">
-			                <h:outputText value="#{employee.phoneNumber}"/>
+			            <p:column headerText="Date of Birth">
+			                <h:outputText value="#{owner.birthDate}"/>
 			            </p:column>
 			
-			            <p:column headerText="Address">
-			                <h:outputText value="#{employee.address}"/>
+			            <p:column headerText="SSN">
+			                <h:outputText value="#{owner.ssn}"/>
 			            </p:column>
 			            <f:facet name="footer">
-			            	<p:commandButton process="singleDT" update=":form:employeeDetail" icon="pi pi-search" value="View" oncomplete="PF('employeeDialog').show()" />
+			            	<p:commandButton process="singleDT" update=":form:ownerDetail" icon="pi pi-search" value="View" oncomplete="PF('ownerDialog').show()" />
 			        	</f:facet>
 			        </p:dataTable>
 
                     <br/>
                     <!-- h:outputText value="#{employeeBean.msg}" styleClass="alert-success" escape="false"></h:outputText-->
 
-	                <p:dialog header="Employee Info" widgetVar="employeeDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
-				        <p:outputPanel id="employeeDetail" style="text-align:center;">
-				            <p:panelGrid  columns="2" rendered="#{not empty employeeBean.msg}" columnClasses="label,value">
+	                <p:dialog header="Account Owner Info" widgetVar="ownerDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+				        <p:outputPanel id="ownerDetail" style="text-align:center;">
+				            <p:panelGrid  columns="2" rendered="#{not empty accountOwnerBean.msg}" columnClasses="label,value">
 				                 
 				                <h:outputText value="Selected:" />
-				                <h:outputText value="#{employeeBean.msg}" />
+				                <h:outputText value="#{accountOwnerBean.msg}" />
 				 
 				 
 				            </p:panelGrid>

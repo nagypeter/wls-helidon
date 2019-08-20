@@ -1,10 +1,10 @@
-package com.oracle.oow19.wls.trustbank;
+package com.oracle.oow19.wls.bestbank;
 
-public class Employee {
+public class AccountOwner {
     private String id;
     private String name;
-    private String phoneNumber;
-    private String address;
+    private String birthDate;
+    private String ssn;
 
     public String getId () {
         return id;
@@ -21,24 +21,24 @@ public class Employee {
     public void setName (String name) {
         this.name = name;
     }
-
-    public String getPhoneNumber () {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber (String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getAddress () {
-        return address;
-    }
-
-    public void setAddress (String address) {
-        this.address = address;
-    }
     
-    @Override
+    public String getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	public String getSsn() {
+		return ssn;
+	}
+
+	public void setSsn(String ssn) {
+		this.ssn = ssn;
+	}
+
+	@Override
     public int hashCode() {
         int hash = 7;
         hash = 59 * hash + (this.id != null ? this.id.hashCode() : 0);
@@ -53,7 +53,7 @@ public class Employee {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Employee other = (Employee) obj;
+        final AccountOwner other = (AccountOwner) obj;
         if ((this.id == null) ? (other.id != null) : !this.id.equals(other.id)) {
             return false;
         }
