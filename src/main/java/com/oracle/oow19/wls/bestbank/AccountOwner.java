@@ -1,10 +1,15 @@
 package com.oracle.oow19.wls.bestbank;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class AccountOwner {
     private String id;
-    private String name;
-    private String birthDate;
+    private String firstname;
+    private String lastname;
+    private String dateofbirth;
     private String ssn;
+    private String score;
 
     public String getId () {
         return id;
@@ -14,20 +19,28 @@ public class AccountOwner {
         this.id = id;
     }
 
-    public String getName () {
-        return name;
+    public String getFirstname () {
+        return firstname;
     }
 
-    public void setName (String name) {
-        this.name = name;
+    public void setFirstname (String firstName) {
+        this.firstname = firstName;
     }
     
-    public String getBirthDate() {
-		return birthDate;
+    public String getLastname () {
+        return lastname;
+    }
+
+    public void setLastname (String lastName) {
+        this.lastname = lastName;
+    }
+    
+    public String getDateofbirth() {
+		return dateofbirth;
 	}
 
-	public void setBirthDate(String birthDate) {
-		this.birthDate = birthDate;
+	public void setDateofbirth(String birthDate) {
+		this.dateofbirth = birthDate;
 	}
 
 	public String getSsn() {
@@ -36,6 +49,15 @@ public class AccountOwner {
 
 	public void setSsn(String ssn) {
 		this.ssn = ssn;
+	}
+	
+
+	public String getScore() {
+		return score;
+	}
+
+	public void setScore(String creditScore) {
+		this.score = creditScore;
 	}
 
 	@Override

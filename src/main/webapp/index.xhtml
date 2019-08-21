@@ -31,12 +31,16 @@
 			                <h:outputText value="#{owner.id}"/>
 			            </p:column>
 			
-			            <p:column headerText="Name">
-			                <h:outputText value="#{owner.name}"/>
+			            <p:column headerText="First Name">
+			                <h:outputText value="#{owner.firstname}"/>
+			            </p:column>
+			            
+			            <p:column headerText="Last Name">
+			                <h:outputText value="#{owner.lastname}"/>
 			            </p:column>
 			
 			            <p:column headerText="Date of Birth">
-			                <h:outputText value="#{owner.birthDate}"/>
+			                <h:outputText value="#{owner.dateofbirth}"/>
 			            </p:column>
 			
 			            <p:column headerText="SSN">
@@ -61,14 +65,17 @@
 				                <h:outputText value="IBAN:" />
 				                <h:outputText value="#{accountOwnerBean.selectedAccountOwner.id}" />
 				 
-				                <h:outputText value="Owner Name:" />
-				                <h:outputText value="#{accountOwnerBean.selectedAccountOwner.name}" />
-				 
+				                <h:outputText value="First Name:" />
+				                <h:outputText value="#{accountOwnerBean.selectedAccountOwner.firstname}" />
+
+				                <h:outputText value="Last Name:" />
+				                <h:outputText value="#{accountOwnerBean.selectedAccountOwner.lastname}" />
+				                				 
 				                <h:outputText value="Date of Birth:" />
-				                <h:outputText value="#{accountOwnerBean.selectedAccountOwner.birthDate}" />
+				                <h:outputText value="#{accountOwnerBean.selectedAccountOwner.dateofbirth}" />
 				             
 				                <h:outputText value="SSN:" />
-				                <h:outputText value="$#{accountOwnerBean.selectedAccountOwner.ssn}" />
+				                <h:outputText value="#{accountOwnerBean.selectedAccountOwner.ssn}" />
 				 		
 				            </p:panelGrid>
 				        </p:outputPanel>
