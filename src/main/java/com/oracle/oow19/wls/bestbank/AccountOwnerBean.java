@@ -50,7 +50,7 @@ public class AccountOwnerBean implements Serializable {
 			accountOwnerList.add(owner);
 		}
 		
-		//Read properties file 
+		/* REMOVE THIS LINE TO READ CREDITSCORE ENDPOINT URL PROPERTY
 		Properties props = new Properties();
 		try {
 			props.load(this.getClass().getResourceAsStream("/app.properties"));
@@ -58,12 +58,18 @@ public class AccountOwnerBean implements Serializable {
 			e.printStackTrace();
 		}
 		this.creditScoreUrl = props.getProperty("creditscore.url");
+		REMOVE THIS LINE TO READ CREDITSCORE ENDPOINT URL PROPERTY */
 	}
 
 	public List<AccountOwner> getAccountOwnerList() {
 		return accountOwnerList;
 	}
+	
+	public void setSelectedAccountOwner(AccountOwner selectedOwner) {
+		this.selectedAccountOwner = selectedOwner;
+	}
 
+	/* REMOVE THIS LINE TO ACTIVATE CREDITSCORE MICROSERVICES APPLICATION INVOCATION	
 	public AccountOwner getSelectedAccountOwner() {
 		if (this.selectedAccountOwner != null) {
 			this.selectedAccountOwner = getCreditScore(this.selectedAccountOwner);
@@ -71,10 +77,6 @@ public class AccountOwnerBean implements Serializable {
 		return this.selectedAccountOwner;
 	}
 
-	public void setSelectedAccountOwner(AccountOwner selectedOwner) {
-		this.selectedAccountOwner = selectedOwner;
-	}
-	
 	private AccountOwner getCreditScore (AccountOwner owner) {
 		
 		WebTarget webTarget = ClientBuilder.newClient().target(this.creditScoreUrl);
@@ -92,5 +94,6 @@ public class AccountOwnerBean implements Serializable {
  
 		return owner;
 	}
+	REMOVE THIS LINE TO ACTIVATE CREDITSCORE MICROSERVICES APPLICATION INVOCATION */
 
 }

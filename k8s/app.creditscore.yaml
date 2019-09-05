@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: helidon-creditscoreservice
+  namespace: helidon$PARTICIPANT_ID
   labels:
     app: helidon-creditscore
 spec:
@@ -15,6 +16,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: helidon-creditscore
+  namespace: helidon$PARTICIPANT_ID
 spec:
   selector:
     matchLabels:
@@ -27,7 +29,7 @@ spec:
     spec:
       containers:
       - name: helidon-creditscore
-        image: iad.ocir.io/weblogick8s/oow19-helidon-app:$PARTICIPANT_ID
+        image: iad.ocir.io/showitbuildit1/helidon-creditscore-app:$PARTICIPANT_ID
         ports:
         - containerPort: 8080
       imagePullSecrets:

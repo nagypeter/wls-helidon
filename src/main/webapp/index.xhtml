@@ -46,14 +46,15 @@
 			            <p:column headerText="SSN">
 			                <h:outputText value="#{owner.ssn}"/>
 			            </p:column>
+			            <!--  REMOVE THIS LINE TO ADD VIEW BUTTON
 			            <f:facet name="footer">
 			            	<p:commandButton process="singleDT" update=":form:ownerDetail" icon="pi pi-search" value="View" oncomplete="PF('ownerDialog').show()" />
 			        	</f:facet>
+			        	REMOVE THIS LINE TO ADD VIEW BUTTON -->
 			        </p:dataTable>
 
                     <br/>
-                    <!-- h:outputText value="#{employeeBean.msg}" styleClass="alert-success" escape="false"></h:outputText-->
-
+					<!--  REMOVE THIS LINE TO ADD DETAIL DIALOG
 	                <p:dialog header="Account Owner Info" widgetVar="ownerDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
 				        <p:outputPanel id="ownerDetail" style="text-align:center;">
 				            <p:panelGrid  columns="2" rendered="#{not empty accountOwnerBean.selectedAccountOwner}" columnClasses="label,value">
@@ -80,7 +81,7 @@
 				            </p:panelGrid>
 				        </p:outputPanel>
 				    </p:dialog>
-
+					REMOVE THIS LINE TO ADD DETAIL DIALOG -->
                 </h:form>
             </div>
         </ui:define>
