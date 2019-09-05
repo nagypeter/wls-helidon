@@ -69,14 +69,17 @@ public class AccountOwnerBean implements Serializable {
 		this.selectedAccountOwner = selectedOwner;
 	}
 
-	/* REMOVE THIS LINE TO ACTIVATE CREDITSCORE MICROSERVICES APPLICATION INVOCATION	
+		
 	public AccountOwner getSelectedAccountOwner() {
+		/* REMOVE THIS LINE TO ACTIVATE CREDITSCORE MICROSERVICES APPLICATION INVOCATION
 		if (this.selectedAccountOwner != null) {
 			this.selectedAccountOwner = getCreditScore(this.selectedAccountOwner);
 		}
+		REMOVE THIS LINE TO ACTIVATE CREDITSCORE MICROSERVICES APPLICATION INVOCATION */
 		return this.selectedAccountOwner;
 	}
 
+	/* REMOVE THIS LINE TO ACTIVATE CREDITSCORE MICROSERVICES APPLICATION INVOCATION
 	private AccountOwner getCreditScore (AccountOwner owner) {
 		
 		WebTarget webTarget = ClientBuilder.newClient().target(this.creditScoreUrl);
