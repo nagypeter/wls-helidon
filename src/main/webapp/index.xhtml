@@ -13,7 +13,6 @@
         </ui:define>
 
         <ui:define name="header">
-            <!--<div class="page-header">-->
             <div>
                 <h2>BestBank Webapp</h2>
                 <p class="lead">This project shows a basic example of a web application working with JSF and CDI to simulate some functionality of bank system.</p>
@@ -77,6 +76,10 @@
 				             
 				                <h:outputText value="SSN:" />
 				                <h:outputText value="#{accountOwnerBean.selectedAccountOwner.ssn}" />
+				                
+				                <h:outputText value="Credit Score" />
+				                <h:outputText value="#{accountOwnerBean.selectedAccountOwner.score}" style="color:#{(accountOwnerBean.selectedAccountOwner.score lt 600) ? 'Red' : 'Green'}"/>
+				                
 				 		
 				            </p:panelGrid>
 				        </p:outputPanel>
